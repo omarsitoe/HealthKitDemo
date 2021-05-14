@@ -11,15 +11,15 @@ import CareKit
 let storeName = "com.utk.healthkitdemo.moca"
 
 class CareData {
-    let careStore: OCKStore = OCKStore(name: storeName)
+    static let careStore: OCKStore = OCKStore(name: storeName)
     
     init() {
-        TaskCreator()
+        CareData.TaskCreator()
     }
     
     // MARK: - Task Manager
     
-    func TaskCreator() {
+    class func TaskCreator() {
         // Build schedule for 10 am every day
         // FIXME: Possibly make sure calendar adjusts to user preference
         let startOfDay = Calendar.current.startOfDay(for: Date())
@@ -30,7 +30,8 @@ class CareData {
         let schedule = OCKSchedule(composing: [dailyMorning])
         
         // Build questionnaire task
-        var task = OCKTask(id: "diabetes questionnaire", title: "Checking In", carePlanID: nil, schedule: schedule)
+        var task = OCKTask(id: "diabetes questionnaire", title: "Daily Check In", carePlanID: nil, schedule: schedule)
+        
 
         task.instructions = "Answer the folllowing questions to the best of your ability."
         
