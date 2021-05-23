@@ -23,35 +23,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //let contentView = ContentView()
         
         // Questions for survey
-        let question1 = "How calm, rested, relaxed do you feel today? (answer 1 = not at all, 5 = totally)"
-        let question2 = "Have you been able to keep up with your diabetes care? (answer 1 = not at all, 5 = totally)"
+        _ = "How calm, rested, relaxed do you feel today? (answer 1 = not at all, 5 = totally)"
+        _ = "Have you been able to keep up with your diabetes care? (answer 1 = not at all, 5 = totally)"
         
         let store = CareData.careStore
         let manager = OCKSynchronizedStoreManager(wrapping: store)
-        let task = CareData.SurveyTaskCreator(question1: question1, question2: question2)
-        
-        print("Task Title: \(String(describing: task.title))")
-        print("Task Survey: \(String(describing: task.surveyQuestion1))")
-        
-        let taskQuery = SurveyTaskQuery()
-        
-        store.fetchTasks(query: taskQuery,
-            callbackQueue: DispatchQueue.main,
-                completion: { (result: (Result<[SurveyTask], OCKStoreError>)) in
-            switch result {
-            case .failure(let error) :
-                print(error.localizedDescription)
-            case .success( _) :
-                print("Success!")
-                let fetchedTask = try! result.get()[0]
-                print("Fetched Task Title: \(String(describing: fetchedTask.title))")
-                print("Fetched Task Quest: \(String(describing: fetchedTask.surveyQuestion1))")
-            }
-        })
-        
-        
         let careViewController = OCKDailyTasksPageViewController(storeManager: manager)
-
+        
+        //CareData.TaskCreator(id: "question1")
+        _ = SurveyViewController(
+            taskID: "question1",
+            eventQuery: OCKEventQuery(for: Date()),
+            storeManager: manager)
+    
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

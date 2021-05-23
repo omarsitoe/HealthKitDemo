@@ -30,17 +30,11 @@ struct SurveyTask: OCKAnyTask & Equatable & Identifiable {
     }
 
     func belongs(to plan: OCKAnyCarePlan) -> Bool {
-        if self.carePlanID?.description == plan.id {
-            return true
-        }
-        return false
+        return self.carePlanID?.description == plan.id
     }
     // Compare tasks by ID string
     static func == (lhs: SurveyTask, rhs: SurveyTask) -> Bool {
-        if lhs.id == rhs.id {
-            return true
-        }
-        return false
+        return lhs.id == rhs.id
     }
 
     // MARK: Custom Task Properties and Setters
@@ -173,16 +167,16 @@ class SurveyStore: OCKStoreProtocol {
 
     // MARK: Task CRUD Methods
     func fetchTasks(query: TaskQuery, callbackQueue: DispatchQueue, completion: @escaping OCKResultClosure<[Task]>) {
-        print("Task fetching not implemented")
+        fatalError("Task fetching not implemented")
     }
     func addTasks(_ tasks: [Task], callbackQueue: DispatchQueue, completion: OCKResultClosure<[Task]>?) {
         //Add task to store
-        print("Task adding not implemented")
+        fatalError("Task adding not implemented")
     }
     func updateTasks(_ tasks: [Task], callbackQueue: DispatchQueue, completion: OCKResultClosure<[Task]>?) {
-        print("Task updating not implemented")
+        fatalError("Task updating not implemented")
     }
     func deleteTasks(_ tasks: [Task], callbackQueue: DispatchQueue, completion: OCKResultClosure<[Task]>?) {
-        print("Task deletion not implemented")
+        fatalError("Task deletion not implemented")
     }
 }

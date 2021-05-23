@@ -17,6 +17,8 @@
 		07067AFD2648A69D00B7BB90 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 07067AFC2648A69D00B7BB90 /* README.md */; };
 		07F2C2A62659C98F00C08B41 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2C2A32659C98200C08B41 /* ResearchKit.framework */; };
 		07F2C2A72659C98F00C08B41 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2C2A32659C98200C08B41 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07F2C2A92659CDF400C08B41 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2A82659CDF400C08B41 /* SurveyViewController.swift */; };
+		07F2C2AC265A28B500C08B41 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2AB265A28B500C08B41 /* SurveyView.swift */; };
 		07FB4FB0264B7A2B004A0D93 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FB4FAF264B7A2B004A0D93 /* HealthKit.framework */; };
 		07FB4FB3264B7D89004A0D93 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = 07FB4FB2264B7D89004A0D93 /* CareKitStore */; };
 		07FB4FB5264B7D89004A0D93 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07FB4FB4264B7D89004A0D93 /* CareKit */; };
@@ -86,6 +88,8 @@
 		07067AF02648A14000B7BB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07067AFC2648A69D00B7BB90 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07F2C29C2659C98200C08B41 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../../Users/omar/Library/Developer/Xcode/DerivedData/HealthKitDemo-ckndlfubjsvtudaixtwabmxcbarv/SourcePackages/checkouts/ResearchKit/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
+		07F2C2A82659CDF400C08B41 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		07F2C2AB265A28B500C08B41 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
 		07FB4FAD264B7A2B004A0D93 /* HealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitDemo.entitlements; sourceTree = "<group>"; };
 		07FB4FAF264B7A2B004A0D93 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		07FB4FBB264E1A4D004A0D93 /* CareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareData.swift; sourceTree = "<group>"; };
@@ -150,12 +154,11 @@
 				07067ACC2648A13B00B7BB90 /* AppDelegate.swift */,
 				07067ACE2648A13B00B7BB90 /* SceneDelegate.swift */,
 				07067AD72648A13F00B7BB90 /* LaunchScreen.storyboard */,
-				07067AD22648A13F00B7BB90 /* Assets.xcassets */,
-				07067ADA2648A13F00B7BB90 /* Info.plist */,
-				07FB4FAD264B7A2B004A0D93 /* HealthKitDemo.entitlements */,
 				07FB4FBB264E1A4D004A0D93 /* CareData.swift */,
 				07FB4FC02651976F004A0D93 /* TaskType.swift */,
+				07F2C2B1265AEEAA00C08B41 /* UI */,
 				07067AD42648A13F00B7BB90 /* Preview Content */,
+				07F2C2B7265AEF0E00C08B41 /* SupportFiles */,
 			);
 			path = HealthKitDemo;
 			sourceTree = "<group>";
@@ -193,6 +196,41 @@
 				07F2C2A52659C98200C08B41 /* ResearchKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		07F2C2B1265AEEAA00C08B41 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				07F2C2B6265AEEC800C08B41 /* View */,
+				07F2C2B5265AEEB600C08B41 /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		07F2C2B5265AEEB600C08B41 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				07F2C2A82659CDF400C08B41 /* SurveyViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		07F2C2B6265AEEC800C08B41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07F2C2AB265A28B500C08B41 /* SurveyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07F2C2B7265AEF0E00C08B41 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				07067AD22648A13F00B7BB90 /* Assets.xcassets */,
+				07067ADA2648A13F00B7BB90 /* Info.plist */,
+				07FB4FAD264B7A2B004A0D93 /* HealthKitDemo.entitlements */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		07FB4FAE264B7A2B004A0D93 /* Frameworks */ = {
@@ -369,8 +407,10 @@
 			files = (
 				07067ACD2648A13B00B7BB90 /* AppDelegate.swift in Sources */,
 				07067ACF2648A13B00B7BB90 /* SceneDelegate.swift in Sources */,
+				07F2C2AC265A28B500C08B41 /* SurveyView.swift in Sources */,
 				07FB4FC12651976F004A0D93 /* TaskType.swift in Sources */,
 				07FB4FBC264E1A4D004A0D93 /* CareData.swift in Sources */,
+				07F2C2A92659CDF400C08B41 /* SurveyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,12 +578,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/SupportFiles/HealthKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthKitDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 6T5BJ8996L;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HealthKitDemo/Info.plist;
+				INFOPLIST_FILE = HealthKitDemo/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,12 +600,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/SupportFiles/HealthKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthKitDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 6T5BJ8996L;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HealthKitDemo/Info.plist;
+				INFOPLIST_FILE = HealthKitDemo/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
