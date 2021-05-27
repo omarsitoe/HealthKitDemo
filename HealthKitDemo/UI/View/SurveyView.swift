@@ -8,20 +8,23 @@
 import Foundation
 import SwiftUI
 import CareKit
-import ResearchKit
 
-struct SurveyView: View {
+struct SurveyView: UIViewControllerRepresentable {
     
-    let store = CareData.careStore
-    let manager = OCKSynchronizedStoreManager(wrapping: CareData.careStore)
+    @Environment(\.storeManager) private var manager
     
-    var body: some View {
-        Text("Hello!")
+    typealias UIViewControllerType = SurveyViewController
+
+    func makeUIViewController(context: Context) -> SurveyViewController {
+        let surveyCard = SurveyViewController(
+            taskID: "diabetes",
+            eventQuery: OCKEventQuery(for: Date()),
+            storeManager: manager)
+        
+        return surveyCard
     }
-}
 
-struct SurveyView_Preview: PreviewProvider {
-    static var previews: some View {
-        SurveyView()
+    func updateUIViewController(_ uiView: SurveyViewController, context: Context) {
+        
     }
 }

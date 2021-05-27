@@ -9,17 +9,13 @@ import Foundation
 import CareKit
 import CareKitStore
 
-let storeName = "com.utk.healthkitdemo.moca"
+
 
 public class CareData {
     
-    static let careStore: OCKStore = OCKStore(name: storeName)
-    
-    
     // MARK: - Task Manager
     
-    // Creates sample task
-    class func TaskCreator(id: String) {
+    class func TaskCreator(id: String, careStore: OCKStore) {
         // Build schedule for 10 am every day
         // FIXME: Possibly make sure calendar adjusts to user preference
         let startOfDay = Calendar.current.startOfDay(for: Date())
@@ -33,11 +29,37 @@ public class CareData {
         var task = OCKTask(id: id, title: "Daily Check In", carePlanID: nil, schedule: schedule)
         
         task.instructions = "Answer daily survey"
+        task.impactsAdherence = true
+        
+        //Clean store
+        //FIXME: Remove in final. Just for debugging
+//        careStore.fetchTask(withID: "diabetes", completion:{ (result: (Result<OCKTask, OCKStoreError>)) in
+//            switch result {
+//            case .failure( _) :
+//                print("Task not found! Adding...")
+//                careStore.addTasks([task],
+//                   callbackQueue: DispatchQueue.main,
+//                        completion: { (result1: (Result<[OCKTask], OCKStoreError>)) in
+//                                 switch result1 {
+//                                 case .failure(let error) :
+//                                     print(error.localizedDescription)
+//                                 case .success( _) :
+//                                     print("Added!")
+//                                 }
+//                 })
+//            case .success( _) :
+//                print("Task already exists! :)")
+//                if let toBeDeleted: OCKTask = try? result.get() {
+//                    print("DELETING HOPEFULLY!")
+//                    careStore.deleteTask(toBeDeleted)
+//                }
+//            }
+//        })
         
         // Add task to store
-        careStore.addTasks([task],
+        careStore.addTask(task,
            callbackQueue: DispatchQueue.main,
-                completion: { (result: (Result<[OCKTask], OCKStoreError>)) in
+                completion: { (result: (Result<OCKTask, OCKStoreError>)) in
                          switch result {
                          case .failure(let error) :
                              print(error.localizedDescription)
@@ -45,21 +67,5 @@ public class CareData {
                              print("Success!")
                          }
          })
-    }
-    
-    class func SurveyTaskCreator(question1: String, question2: String) {
-        // Build schedule for 10 am every day
-        let startOfDay = Calendar.current.startOfDay(for: Date())
-        let inTheMorning = Calendar.current.date(byAdding: .hour, value: 10, to: startOfDay)!
-
-        let dailyMorning = OCKScheduleElement(start: inTheMorning, end: nil, interval: DateComponents(day: 1))
-
-        _ = OCKSchedule(composing: [dailyMorning])
-        
-        // Create two survey tasks
-        //var task = SurveyTask(id: "diabetes questionnaire", title: "Daily Check In", carePlanID: nil, schedule: schedule)
-        
-        // Add tasks to the store
-    
     }
 }

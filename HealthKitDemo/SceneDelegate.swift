@@ -13,34 +13,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-        // Create the SwiftUI view that provides the window contents.
-        //let contentView = ContentView()
         
-        // Questions for survey
-        _ = "How calm, rested, relaxed do you feel today? (answer 1 = not at all, 5 = totally)"
-        _ = "Have you been able to keep up with your diabetes care? (answer 1 = not at all, 5 = totally)"
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let manager = appDelegate.storeManager
         
-        let store = CareData.careStore
-        let manager = OCKSynchronizedStoreManager(wrapping: store)
-        let careViewController = OCKDailyTasksPageViewController(storeManager: manager)
-        
-        //CareData.TaskCreator(id: "question1")
-        _ = SurveyViewController(
-            taskID: "question1",
-            eventQuery: OCKEventQuery(for: Date()),
-            storeManager: manager)
-    
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UINavigationController(rootViewController: careViewController)
+            window.rootViewController = UINavigationController(rootViewController: MainViewController(storeManager: manager))
             self.window = window
             window.makeKeyAndVisible()
         }

@@ -5,12 +5,25 @@
 //  Created by Omar Trejo on 5/9/21.
 //
 
-import UIKit
 import CareKit
-import CareKitStore
+import UIKit
+import HealthKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    
+    let store: OCKStore = OCKStore(name: "com.utk.healthkitdemo.moca")
+    
+    private(set) lazy var storeManager: OCKSynchronizedStoreManager = {
+        
+        //let storeName = "com.utk.healthkitdemo.moca"
+        
+        CareData.TaskCreator(id: "diabetes", careStore: self.store)
+        
+        return OCKSynchronizedStoreManager(wrapping: store)
+    }()
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
