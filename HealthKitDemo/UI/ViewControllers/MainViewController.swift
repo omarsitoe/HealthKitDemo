@@ -47,7 +47,6 @@ class MainViewController: OCKDailyPageViewController {
                         eventQuery: OCKEventQuery(for: Date()),
                         storeManager: self.manager)
                     
-                    //self.present(surveyCard, animated: true, completion: nil)
                     listViewController.appendViewController(surveyCard, animated: false)
                 } else {
                     print("Couldn't find diabetes task for \(date)")
