@@ -11,7 +11,7 @@ import ResearchKit
 import UIKit
 
 
-// MARK: ResearchKit-Compatible View Controller
+// MARK: - ResearchKit-Compatible View Controller
 class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewControllerDelegate {
 
     // Called when the user taps the button!
@@ -34,19 +34,16 @@ class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewContro
         let surveyForm = ORKFormStep(identifier: "surveyForm",
                                      title: "Form", text: "Daily Check In")
         
-        
         let item1 = ORKFormItem(identifier: "question1",
                                 text: "How Calm or Relaxed Do You Feel Today",
                                 answerFormat: answerFormat)
-        
         let item2 = ORKFormItem(identifier: "question2",
                                 text: "How Have You Kept Up With Your Diabetes Care",
                                 answerFormat: answerFormat)
         
         surveyForm.formItems = [item1, item2]
         
-        let surveyTask = ORKOrderedTask(identifier: "survey",
-                                        steps: [surveyForm])
+        let surveyTask = ORKOrderedTask(identifier: "survey", steps: [surveyForm])
         let surveyViewController = ORKTaskViewController(task: surveyTask, taskRun: nil)
         surveyViewController.delegate = self
         
@@ -77,18 +74,9 @@ class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewContro
         print()
         
         // Saves the result into CareKit's store
-//        controller.appendOutcomeValue(withType: answer1, at: IndexPath(item: 0, section: 0), completion: { (result: (Result<OCKAnyOutcome, Error>)) in
-//            switch result {
-//            case .failure(let error) :
-//                print(error.localizedDescription)
-//            case .success( _) :
-//                print("first value added!")
-//            }
-//        })
-        
-        //FIXME: Might have to make index path dynamic
         if let event = controller.eventFor(indexPath: IndexPath(item: 0, section: 0)) {
 
+            //FIXME: Values might not be saved in order? Make sure
             let values = [answer1, answer2].map { OCKOutcomeValue($0) }
             let outcome = try! controller.makeOutcomeFor(event: event, withValues: values)
 
@@ -105,7 +93,7 @@ class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewContro
 }
 
 
-// MARK: Custom View Synchronizer
+// MARK: - Custom View Synchronizer
 class SurveyViewSynchronizer: OCKInstructionsTaskViewSynchronizer {
 
     // Customize the initial state of the view
