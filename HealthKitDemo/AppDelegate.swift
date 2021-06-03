@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private(set) lazy var storeManager: OCKSynchronizedStoreManager = {
         
         //let storeName = "com.utk.healthkitdemo.moca"
-        
-        CareData.TaskCreator(id: "diabetes", careStore: self.store)
+        let CD = CareData(store: store)
+        CD.TaskCreator()
+        CD.PopulateContactList()
         
         return OCKSynchronizedStoreManager(wrapping: store)
     }()
