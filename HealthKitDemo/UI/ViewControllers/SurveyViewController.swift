@@ -34,12 +34,17 @@ class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewContro
         let surveyForm = ORKFormStep(identifier: "surveyForm",
                                      title: "Form", text: "Daily Check In")
         
+        //let sec1 = ORKFormItem(sectionTitle: "Question 1")
         let item1 = ORKFormItem(identifier: "question1",
                                 text: "How Calm or Relaxed Do You Feel Today",
                                 answerFormat: answerFormat)
+        
+        //let sec2 = ORKFormItem(sectionTitle: "Question 2")
         let item2 = ORKFormItem(identifier: "question2",
                                 text: "How Have You Kept Up With Your Diabetes Care",
                                 answerFormat: answerFormat)
+        item1.isOptional = false
+        item2.isOptional = false
         
         surveyForm.formItems = [item1, item2]
         

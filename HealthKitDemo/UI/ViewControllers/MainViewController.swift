@@ -69,30 +69,31 @@ class MainViewController: OCKDailyPageViewController {
                 }
                 
                 // Create a plot comparing nausea to medication adherence.
-//                let surveySeries = OCKDataSeriesConfiguration(
-//                    taskID: "diabetes",
-//                    legendTitle: "Survey Answers",
-//                    gradientStartColor: .systemGray2,
-//                    gradientEndColor: .systemGray,
-//                    markerSize: 5,
-//                    eventAggregator: OCKEventAggregator.countOutcomeValues)
-                
+                let customAgg1 = OCKEventAggregator.custom { events -> Double in
+                    let value = events.first?.outcome?.values[0].integerValue ?? 0
+                    return Double(value)
+                }
                 let answerSeries1 = OCKDataSeriesConfiguration(
-                    taskID: "survey",
+                    taskID: "diabetes",
                     legendTitle: "Question 1",
-                    gradientStartColor: .systemGray2,
-                    gradientEndColor: .systemGray,
-                    markerSize: 5,
-                    eventAggregator: OCKEventAggregator.custom({ events in events.first?.outcome?.values[0].doubleValue ?? 0 })
+                    gradientStartColor: UIColor.red,
+                    gradientEndColor: UIColor.red,
+                    markerSize: 10,
+                    eventAggregator: customAgg1
                 )
+                
 
+                let customAgg2 = OCKEventAggregator.custom { events -> Double in
+                    let value = events.first?.outcome?.values[1].integerValue ?? 0
+                    return Double(value)
+                }
                 let answerSeries2 = OCKDataSeriesConfiguration(
-                    taskID: "survey",
+                    taskID: "diabetes",
                     legendTitle: "Question 2",
-                    gradientStartColor: .systemGray2,
-                    gradientEndColor: .systemGray,
-                    markerSize: 5,
-                    eventAggregator: OCKEventAggregator.custom({ events in events.first?.outcome?.values[1].doubleValue ?? 0 })
+                    gradientStartColor: UIColor.blue, //.systemGray2,
+                    gradientEndColor: UIColor.blue, //.systemGray,
+                    markerSize: 10,
+                    eventAggregator: customAgg2
                 )
 
                 let insightsCard = OCKCartesianChartViewController(

@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import CareKit
-import ResearchKit
 import UIKit
 
 struct CardView: OCKCardable {

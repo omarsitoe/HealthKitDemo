@@ -5,8 +5,8 @@
 //  Created by Omar Trejo on 5/9/21.
 //
 
-import CareKit
 import UIKit
+import CareKit
 import HealthKit
 
 @main
