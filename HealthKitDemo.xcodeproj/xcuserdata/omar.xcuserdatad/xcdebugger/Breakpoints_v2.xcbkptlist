@@ -16,5 +16,69 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5521B4ED-F756-4DDA-BD40-BB26251A12D7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthKitDemo/UI/ViewControllers/SurveyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "taskViewController(_:didFinishWith:error:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5521B4ED-F756-4DDA-BD40-BB26251A12D7 - 2ef8e6b131e0bb53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthKitDemo.SurveyViewController.taskViewController(_: __C.ORKTaskViewController, didFinishWith: __C.ORKTaskViewControllerFinishReason, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "HealthKitDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omar/Documents/Research/HealthKitDemo/HealthKitDemo/UI/ViewControllers/SurveyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "4775">
+               </Location>
+               <Location
+                  uuid = "5521B4ED-F756-4DDA-BD40-BB26251A12D7 - 853152418a36555b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Result&lt;CareKitStore.OCKAnyOutcome, CareKitStore.OCKStoreError&gt;) -&gt; () in HealthKitDemo.SurveyViewController.taskViewController(_: __C.ORKTaskViewController, didFinishWith: __C.ORKTaskViewControllerFinishReason, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "HealthKitDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omar/Documents/Research/HealthKitDemo/HealthKitDemo/UI/ViewControllers/SurveyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "142">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9133493-D451-48B0-98DD-AF122BDBC34E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthKitDemo/UI/ViewControllers/SurveyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "taskViewController(_:didFinishWith:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

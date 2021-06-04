@@ -82,7 +82,10 @@ class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewContro
         if let event = controller.eventFor(indexPath: IndexPath(item: 0, section: 0)) {
 
             //FIXME: Values might not be saved in order? Make sure
-            let values = [answer1, answer2].map { OCKOutcomeValue($0) }
+            var values = [answer1, answer2].map { OCKOutcomeValue($0) }
+            values[0].kind = "Q1"
+            values[1].kind = "Q2"
+            
             let outcome = try! controller.makeOutcomeFor(event: event, withValues: values)
 
             controller.storeManager.store.addAnyOutcome(outcome, callbackQueue: .main) { result in
@@ -114,8 +117,8 @@ class SurveyViewSynchronizer: OCKInstructionsTaskViewSynchronizer {
         super.updateView(view, context: context)
 
         // Check if an answer exists or not and set the detail label accordingly
-        if let answers = context.viewModel?.event(forIndexPath: IndexPath(item: 0, section: 0))?.outcome?.values {
-            view.headerView.detailLabel.text = "Answers: \(answers)"
+        if (context.viewModel?.event(forIndexPath: IndexPath(item: 0, section: 0))?.outcome?.values) != nil {
+            view.headerView.detailLabel.text = "Have a great day!"
         } else {
             view.headerView.detailLabel.text = "How is treatment going?"
         }

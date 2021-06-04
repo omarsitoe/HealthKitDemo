@@ -70,8 +70,14 @@ class MainViewController: OCKDailyPageViewController {
                 
                 // Create a plot comparing nausea to medication adherence.
                 let customAgg1 = OCKEventAggregator.custom { events -> Double in
-                    let value = events.first?.outcome?.values[0].integerValue ?? 0
-                    return Double(value)
+                    let values = events.first?.outcome?.values ?? []
+                    for answer in values {
+                        if answer.kind == "Q1" {
+                            let ret = answer.integerValue ?? 0
+                            return Double(ret)
+                        }
+                    }
+                    return 0.0
                 }
                 let answerSeries1 = OCKDataSeriesConfiguration(
                     taskID: "diabetes",
@@ -82,10 +88,15 @@ class MainViewController: OCKDailyPageViewController {
                     eventAggregator: customAgg1
                 )
                 
-
                 let customAgg2 = OCKEventAggregator.custom { events -> Double in
-                    let value = events.first?.outcome?.values[1].integerValue ?? 0
-                    return Double(value)
+                    let values = events.first?.outcome?.values ?? []
+                    for answer in values {
+                        if answer.kind == "Q2" {
+                            let ret = answer.integerValue ?? 0
+                            return Double(ret)
+                        }
+                    }
+                    return 0.0
                 }
                 let answerSeries2 = OCKDataSeriesConfiguration(
                     taskID: "diabetes",
