@@ -50,17 +50,17 @@ class CareData {
     
     //MARK: - Dummy Contact List Creator
     func PopulateContactList() {
-        //clean store for debugging
-        careStore.fetchContacts(completion: {
-            result in
-                switch result {
-                case let .success(Contacts):
-                    print("Success: \(Contacts)")
-                    self.careStore.deleteContacts(Contacts)
-                case let .failure(error):
-                    print("Error: \(error)")
-                }
-        })
+        //clean store timeline for debugging
+//        careStore.fetchContacts(completion: {
+//            result in
+//                switch result {
+//                case let .success(Contacts):
+//                    print("Success: \(Contacts)")
+//                    self.careStore.deleteContacts(Contacts)
+//                case let .failure(error):
+//                    print("Error: \(error)")
+//                }
+//        })
         
         //Create dummy contact
         var contact = OCKContact(id: "omar", givenName: "Omar",
@@ -82,6 +82,6 @@ class CareData {
         }()
         
         //Add to the store
-        //careStore.addContacts([contact])
+        careStore.addContacts([contact])
     }
 }
