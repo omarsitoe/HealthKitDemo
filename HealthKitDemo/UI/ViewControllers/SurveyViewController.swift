@@ -43,10 +43,9 @@ class SurveyViewController: OCKInstructionsTaskViewController, ORKTaskViewContro
         let item2 = ORKFormItem(identifier: "question2",
                                 text: "How Have You Kept Up With Your Diabetes Care",
                                 answerFormat: answerFormat)
-        item1.isOptional = false
-        item2.isOptional = false
         
         surveyForm.formItems = [item1, item2]
+        surveyForm.isOptional = false
         
         let surveyTask = ORKOrderedTask(identifier: "survey", steps: [surveyForm])
         let surveyViewController = ORKTaskViewController(task: surveyTask, taskRun: nil)
@@ -121,6 +120,7 @@ class SurveyViewSynchronizer: OCKInstructionsTaskViewSynchronizer {
             view.headerView.detailLabel.text = "Have a great day!"
         } else {
             view.headerView.detailLabel.text = "How is treatment going?"
+            view.completionButton.label.text = "Start Survey"
         }
     }
 }

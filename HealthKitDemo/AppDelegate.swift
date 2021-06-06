@@ -14,18 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    let store: OCKStore = OCKStore(name: "com.utk.healthkitdemo.moca")
+    
+    let healthStore: HKHealthStore? = HealthData().healthStore
+    let careStore: OCKStore = CareData.careStore
     
     private(set) lazy var storeManager: OCKSynchronizedStoreManager = {
         
-        //let storeName = "com.utk.healthkitdemo.moca"
-        let CD = CareData(store: store)
-        CD.TaskCreator()
-        CD.PopulateContactList()
+        //let CD = CareData(store: careStore)
+        CareData.TaskCreator()
+        CareData.PopulateContactList()
         
-        return OCKSynchronizedStoreManager(wrapping: store)
+        return OCKSynchronizedStoreManager(wrapping: careStore)
     }()
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -11,15 +11,14 @@ import HealthKit
 import UIKit
 import Contacts
 
+let storeName = "com.utk.healthkitdemo.moca"
+
 class CareData {
     
-    var careStore: OCKStore
-    init(store: OCKStore) {
-        self.careStore = store
-    }
+    static let careStore: OCKStore = OCKStore(name: storeName)
     
     // MARK: - Task Manager
-    func TaskCreator() {
+    class func TaskCreator() {
         // Build schedule for 10 am every day
         // FIXME: Possibly make sure calendar adjusts to user preference
         let startOfDay = Calendar.current.startOfDay(for: Date())
@@ -49,7 +48,7 @@ class CareData {
     }
     
     //MARK: - Dummy Contact List Creator
-    func PopulateContactList() {
+    class func PopulateContactList() {
         //clean store timeline for debugging
 //        careStore.fetchContacts(completion: {
 //            result in

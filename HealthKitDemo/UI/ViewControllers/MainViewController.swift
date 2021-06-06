@@ -117,6 +117,9 @@ class MainViewController: OCKDailyPageViewController {
                 //insightsCard.chartView.headerView.detailLabel.text = "This Week"
                 insightsCard.chartView.headerView.accessibilityLabel = "How You Felt, This Week"
                 listViewController.appendViewController(insightsCard, animated: false)
+                
+                //MARK: - Show Health Kit Data
+                
             }
         }
     }
