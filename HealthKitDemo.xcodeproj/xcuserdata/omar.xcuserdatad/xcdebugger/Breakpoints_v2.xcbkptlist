@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             uuid = "1A097AA5-2EBB-41BF-A7B0-130F433FCD83"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             breakpointStackSelectionBehavior = "1"
@@ -33,7 +33,7 @@
             <Locations>
                <Location
                   uuid = "5521B4ED-F756-4DDA-BD40-BB26251A12D7 - 2ef8e6b131e0bb53"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "HealthKitDemo.SurveyViewController.taskViewController(_: __C.ORKTaskViewController, didFinishWith: __C.ORKTaskViewControllerFinishReason, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
@@ -48,7 +48,7 @@
                </Location>
                <Location
                   uuid = "5521B4ED-F756-4DDA-BD40-BB26251A12D7 - 853152418a36555b"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #5 (Swift.Result&lt;CareKitStore.OCKAnyOutcome, CareKitStore.OCKStoreError&gt;) -&gt; () in HealthKitDemo.SurveyViewController.taskViewController(_: __C.ORKTaskViewController, didFinishWith: __C.ORKTaskViewControllerFinishReason, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
@@ -77,6 +77,70 @@
             startingLineNumber = "92"
             endingLineNumber = "92"
             landmarkName = "taskViewController(_:didFinishWith:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADD2F8B9-39A7-40E6-9C6A-359DD7B8CA64"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthKitDemo/UI/ViewControllers/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "dailyPageViewController(_:prepare:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5215DE28-3996-4209-A35A-832AD18D1DCA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthKitDemo/DataModels/HealthData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "calculateDailySteps(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA513BD0-81C4-40C7-A36B-874EFD546E99"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthKitDemo/DataModels/HealthData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "updateUI(_:startDate:endDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2167564-E28B-4124-BCCA-2523B2908BF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthKitDemo/DataModels/HealthData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "updateUI(_:startDate:endDate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

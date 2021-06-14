@@ -18,6 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let manager = appDelegate.storeManager
         
+        // Initialize graph values
+        HealthData.calculateDailySteps(date: Date())
+        
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

@@ -18,12 +18,14 @@
 		076B0080266C4DCA00FB5041 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B007F266C4DCA00FB5041 /* HealthData.swift */; };
 		076B0085266C4DEC00FB5041 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075BDED72669EB15002B31F2 /* ResearchKit.framework */; };
 		076B0086266C4DEC00FB5041 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 075BDED72669EB15002B31F2 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		076B008B266D6F9E00FB5041 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FB4FAF264B7A2B004A0D93 /* HealthKit.framework */; };
+		076B0095266D90A500FB5041 /* StepChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B0094266D90A500FB5041 /* StepChartViewController.swift */; };
+		076B00AC2672B4A600FB5041 /* EmptyDataBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B00AB2672B4A600FB5041 /* EmptyDataBackgroundView.swift */; };
 		07F2C2A92659CDF400C08B41 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2A82659CDF400C08B41 /* SurveyViewController.swift */; };
 		07F2C2AC265A28B500C08B41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2AB265A28B500C08B41 /* ContentView.swift */; };
 		07F2C2BA265AF3D200C08B41 /* StoreEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2B9265AF3D200C08B41 /* StoreEnvironment.swift */; };
 		07F2C2BC265B211400C08B41 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2BB265B211400C08B41 /* SurveyView.swift */; };
 		07F2C2C3265CA77500C08B41 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2C2C2265CA77500C08B41 /* MainViewController.swift */; };
-		07FB4FB0264B7A2B004A0D93 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FB4FAF264B7A2B004A0D93 /* HealthKit.framework */; };
 		07FB4FB3264B7D89004A0D93 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = 07FB4FB2264B7D89004A0D93 /* CareKitStore */; };
 		07FB4FB5264B7D89004A0D93 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07FB4FB4264B7D89004A0D93 /* CareKit */; };
 		07FB4FB7264B7D89004A0D93 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 07FB4FB6264B7D89004A0D93 /* CareKitUI */; };
@@ -92,6 +94,8 @@
 		07067AFC2648A69D00B7BB90 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		075BDED02669EB15002B31F2 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../../Downloads/ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		076B007F266C4DCA00FB5041 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
+		076B0094266D90A500FB5041 /* StepChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepChartViewController.swift; sourceTree = "<group>"; };
+		076B00AB2672B4A600FB5041 /* EmptyDataBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataBackgroundView.swift; sourceTree = "<group>"; };
 		07F2C2A82659CDF400C08B41 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		07F2C2AB265A28B500C08B41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07F2C2B9265AF3D200C08B41 /* StoreEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEnvironment.swift; sourceTree = "<group>"; };
@@ -110,8 +114,8 @@
 				07FB4FB5264B7D89004A0D93 /* CareKit in Frameworks */,
 				07FB4FB3264B7D89004A0D93 /* CareKitStore in Frameworks */,
 				07FB4FB7264B7D89004A0D93 /* CareKitUI in Frameworks */,
-				07FB4FB0264B7A2B004A0D93 /* HealthKit.framework in Frameworks */,
 				076B0085266C4DEC00FB5041 /* ResearchKit.framework in Frameworks */,
+				076B008B266D6F9E00FB5041 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +231,7 @@
 			children = (
 				07F2C2A82659CDF400C08B41 /* SurveyViewController.swift */,
 				07F2C2C2265CA77500C08B41 /* MainViewController.swift */,
+				076B0094266D90A500FB5041 /* StepChartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			children = (
 				07F2C2AB265A28B500C08B41 /* ContentView.swift */,
 				07F2C2BB265B211400C08B41 /* SurveyView.swift */,
+				076B00AB2672B4A600FB5041 /* EmptyDataBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -435,6 +441,8 @@
 				07F2C2AC265A28B500C08B41 /* ContentView.swift in Sources */,
 				076B0080266C4DCA00FB5041 /* HealthData.swift in Sources */,
 				07F2C2BC265B211400C08B41 /* SurveyView.swift in Sources */,
+				076B0095266D90A500FB5041 /* StepChartViewController.swift in Sources */,
+				076B00AC2672B4A600FB5041 /* EmptyDataBackgroundView.swift in Sources */,
 				07F2C2BA265AF3D200C08B41 /* StoreEnvironment.swift in Sources */,
 				07F2C2C3265CA77500C08B41 /* MainViewController.swift in Sources */,
 				07FB4FBC264E1A4D004A0D93 /* CareData.swift in Sources */,

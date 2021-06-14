@@ -14,8 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
-    let healthStore: HKHealthStore? = HealthData().healthStore
     let careStore: OCKStore = CareData.careStore
     
     private(set) lazy var storeManager: OCKSynchronizedStoreManager = {

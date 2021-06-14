@@ -7,6 +7,7 @@
 
 import Foundation
 import CareKit
+import HealthKit
 import SwiftUI
 
 class MainViewController: OCKDailyPageViewController {
@@ -120,6 +121,14 @@ class MainViewController: OCKDailyPageViewController {
                 
                 //MARK: - Show Health Kit Data
                 
+                //Create a plot showing daily step count for the last week
+                let stepCountCard = StepChartViewController(
+                    controller: .init(weekOfDate: date, storeManager: self.manager),
+                    viewSynchronizer: StepChartViewSynchronizer(plotType: .bar, selectedDate: date))
+                
+                HealthData.controller = stepCountCard
+                stepCountCard.chartView.headerView.titleLabel.text = "Step Count"
+                listViewController.appendViewController(stepCountCard, animated: false)
             }
         }
     }
