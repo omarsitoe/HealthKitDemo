@@ -22,15 +22,6 @@ struct ContentView: View {
     public var body: some View {
         VStack {
             Text("Hello")
-//            CardView {
-//                InstructionsTaskView(
-//                    taskID: "question1",
-//                    eventQuery: OCKEventQuery(for: Date()),
-//                    storeManager: manager)
-//                SurveyView()
-//            }
-            
-            //CardView(cardView: .init(), contentView: .init())
         }
     }
 }
