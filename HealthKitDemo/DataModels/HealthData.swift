@@ -51,7 +51,7 @@ class HealthData {
         let interval = DateComponents(day: 1)
         let components = DateComponents(calendar: calendar,
                                         timeZone: calendar.timeZone,
-                                        hour: 3,
+                                        hour: 0,
                                         minute: 0,
                                         second: 0,
                                         weekday: 2)
@@ -118,13 +118,13 @@ class HealthData {
             let group = DispatchGroup()
             var dataVals: [CGFloat] = []
             
-            guard let adjStart = Calendar.current.date(byAdding: DateComponents(day: 1), to: startDate),
-                  let adjEnd = Calendar.current.date(byAdding: DateComponents(day: 1), to: endDate) else {
-                fatalError("*** Invalid date range ***")
-            }
+//            guard let adjStart = Calendar.current.date(byAdding: DateComponents(day: 0), to: startDate),
+//                  let adjEnd = Calendar.current.date(byAdding: DateComponents(day: 0), to: endDate) else {
+//                fatalError("*** Invalid date range ***")
+//            }
             
             group.enter()
-            statisticsCollection.enumerateStatistics(from: adjStart, to: adjEnd) { (statistics, stop) in
+            statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
                 
                 let toAdd = statistics.sumQuantity()?.doubleValue(for: .count()) ?? 0.0
                 dataVals.append(CGFloat(toAdd))
@@ -138,6 +138,7 @@ class HealthData {
             self.graphValues = [
                 OCKDataSeries(values: dataVals, title: "Step Count")
             ]
+            print(self.graphValues)
             
             // Update graph values in view controller
             self.controller?.chartView.graphView.dataSeries = HealthData.graphValues
